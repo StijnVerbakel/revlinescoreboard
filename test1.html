@@ -1,0 +1,161 @@
+<script>
+    var players = [
+          { name: "Heke", event1: 40, event2: 0, event3: 0, event4: 0 },
+          { name: "Adsrobin", event1: 36, event2: 0, event3: 0, event4: 0 },
+          { name: "Stijn", event1: 30, event2: 0, event3: 0, event4: 0 },
+          { name: "Skull_Jelle", event1: 26, event2: 0, event3: 0, event4: 0 },
+          { name: "Tyrone", event1: 32, event2: 0, event3: 0, event4: 0 },
+          { name: "Killer", event1: 28, event2: 0, event3: 0, event4: 0 },
+          { name: "Player7", event1: 34, event2: 0, event3: 0, event4: 0 },
+          { name: "Player8", event1: 38, event2: 0, event3: 0, event4: 0 },
+        
+        ];
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* ... (your existing styles) ... */
+     /* ... (your existing styles) ... */
+     body {
+      background-color: #333;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 20px auto;
+    }
+    table, th, td {
+      border: 1px solid #777;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #c00;
+      color: white;
+    }
+    tr:nth-child(odd) {
+      background-color: #444;
+    }
+    tr:nth-child(even) {
+      background-color: #333;
+    }
+    th, td {
+      border-bottom: 2px solid #c00;
+    }
+    h1 {
+      text-align: center;
+      color: #c00;
+    }
+    .golden {
+      background-color: gold !important;
+    }
+    .silver {
+      background-color: silver !important;
+    }
+    .bronze {
+      background-color: #cd7f32 !important;
+    }
+    /* Add styles for highlighting */
+    .gold-event1 {
+      background-color: gold !important;
+    }
+    .silver-event1 {
+      background-color: silver !important;
+    }
+    .bronze-event1 {
+      background-color: #cd7f32 !important;
+    }
+    .background-event1 {
+      background-color: transparent;
+    }
+    .gold-event2 {
+      background-color: gold !important;
+    }
+    .silver-event2 {
+      background-color: silver !important;
+    }
+    .bronze-event2 {
+      background-color: #cd7f32 !important;
+    }
+    .background-event2 {
+      background-color: transparent;
+    }
+    .gold-event3 {
+      background-color: gold !important;
+    }
+    .silver-event3 {
+      background-color: silver !important;
+    }
+    .bronze-event3 {
+      background-color: #cd7f32 !important;
+    }
+    .background-event3 {
+      background-color: transparent;
+    }
+    .gold-event4 {
+      background-color: gold !important;
+    }
+    .silver-event4 {
+      background-color: silver !important;
+    }
+    .bronze-event4 {
+      background-color: #cd7f32 !important;
+    }
+    .background-event4 {
+      background-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <h1>RevLine league event</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Event 1</th>
+        <th>Event 2</th>
+        <th>Event 3</th>
+        <th>Event 4</th>
+        <th>Total Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <script>
+        // Function to determine the maximum and second maximum score for each event
+        function getMaxAndSecondMaxEventScores(event) {
+          const scores = players.map(player => player[event]);
+          const max = Math.max(...scores);
+          scores.splice(scores.indexOf(max), 1);
+          const secondMax = Math.max(...scores);
+          return { max, secondMax };
+        }
+
+        players.sort((a, b) => (b.event1 + b.event2 + b.event3 + b.event4) - (a.event1 + a.event2 + a.event3 + a.event4));
+
+        players.forEach(function(player, index) {
+          var row = document.createElement("tr");
+          const event1Scores = getMaxAndSecondMaxEventScores('event1');
+          const event2Scores = getMaxAndSecondMaxEventScores('event2');
+          const event3Scores = getMaxAndSecondMaxEventScores('event3');
+          const event4Scores = getMaxAndSecondMaxEventScores('event4');
+          row.innerHTML = `
+            <td>${player.name}</td>
+            <td class="${player.event1 === 0 ? '' : (player.event1 === event1Scores.max ? 'gold-event1' : (player.event1 === event1Scores.secondMax ? 'silver-event1' : (index < 3 ? 'bronze-event1' : 'background-event1')))}">${player.event1}</td>
+            <td class="${player.event2 === 0 ? '' : (player.event2 === event2Scores.max ? 'gold-event2' : (player.event2 === event2Scores.secondMax ? 'silver-event2' : (index < 3 ? 'bronze-event2' : 'background-event2')))}">${player.event2}</td>
+            <td class="${player.event3 === 0 ? '' : (player.event3 === event3Scores.max ? 'gold-event3' : (player.event3 === event3Scores.secondMax ? 'silver-event3' : (index < 3 ? 'bronze-event3' : 'background-event3')))}">${player.event3}</td>
+            <td class="${player.event4 === 0 ? '' : (player.event4 === event4Scores.max ? 'gold-event4' : (player.event4 === event4Scores.secondMax ? 'silver-event4' : (index < 3 ? 'bronze-event4' : 'background-event4')))}">${player.event4}</td>
+            <td>${player.event1 + player.event2 + player.event3 + player.event4}</td>
+          `;
+          document.querySelector("tbody").appendChild(row);
+        });
+      </script>
+    </tbody>
+  </table>
+</body>
+</html>
