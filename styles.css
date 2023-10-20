@@ -1,0 +1,152 @@
+
+body {
+    background-color: #333;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+  }
+  table, th, td {
+    border: 1px solid #777;
+  }
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+  th ,.card-body{
+    background-color: #c00;
+    color: white;
+  }
+  tr:nth-child(odd) {
+    background-color: #444;
+  }
+  tr:nth-child(even) {
+    background-color: #333;
+  }
+  th, td  {
+    border-bottom: 2px solid #c00;
+  }
+  h1 ,.racesch {
+    text-align: center;
+    color: #c00;
+  }
+  .golden {
+    background-color: gold !important;
+  }
+  .silver {
+    background-color: silver !important;
+  }
+  .bronze {
+    background-color: #cd7f32 !important;
+  }
+  /* Add styles for highlighting */
+  .gold-event1 {
+    background-color: gold !important;
+  }
+  .silver-event1 {
+    background-color: silver !important;
+  }
+  .bronze-event1 {
+    background-color: #cd7f32 !important;
+  }
+  .background-event1 {
+    background-color: transparent;
+  }
+  .gold-event2 {
+    background-color: gold !important;
+  }
+  .silver-event2 {
+    background-color: silver !important;
+  }
+  .bronze-event2 {
+    background-color: #cd7f32 !important;
+  }
+  .background-event2 {
+    background-color: transparent;
+  }
+  .gold-event3 {
+    background-color: gold !important;
+  }
+  .silver-event3 {
+    background-color: silver !important;
+  }
+  .bronze-event3 {
+    background-color: #cd7f32 !important;
+  }
+  .background-event3 {
+    background-color: transparent;
+  }
+  .gold-event4 {
+    background-color: gold !important;
+  }
+  .silver-event4 {
+    background-color: silver !important;
+  }
+  .bronze-event4 {
+    background-color: #cd7f32 !important;
+  }
+  .background-event4 {
+    background-color: transparent;
+  }
+
+
+
+/* Add styles for the race schedule */
+.race-schedule {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .race-schedule h2 {
+    font-size: 20px;
+  }
+  
+  .race-week {
+   
+    padding: 10px;
+    margin: 10px;
+    background-color: #333;
+    border-radius: 5px;
+  }
+  
+  .race-week h3 {
+    font-size: 16px;
+    margin-top: 0;
+  }
+  
+  .race-week p {
+    margin: 5px 0;
+  }
+  /* Add styles for the race schedule */
+.race-schedule {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  .race-week {
+    width: 23%; /* Adjust the width to your liking */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    background-color:#434343;
+    border-radius: 5px;
+  }
+  
+  .race-week h3 {
+    font-size: 16px;
+    margin-top: 0;
+  }
+  
+  .race-week p {
+    margin: 5px 0;
+  }
+  
+ 
+  /* custom Stijn Verbakel */
+
+
